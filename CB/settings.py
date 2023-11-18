@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-go%*ve54^&&dc=h)va!vsh$=n(2kojg=o4bsk1t#yp@hpgmp)1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "cryptobridge.herokuapp.com", "cryptobridge.onrender.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "cryptobridge.herokuapp.com", "crypto-bridge-final.onrender.com"]
 
 
 # Application definition
