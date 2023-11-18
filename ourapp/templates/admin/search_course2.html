@@ -1,0 +1,313 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- META ============================================= -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+	<meta name="robots" content="" />
+
+	<!-- DESCRIPTION -->
+	<meta name="description" content="Cryptobridge" />
+
+	<!-- OG -->
+	<meta property="og:title" content="Cryptobridge" />
+	<meta property="og:description" content="Cryptobridge" />
+	<meta property="og:image" content="" />
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- FAVICONS ICON ============================================= -->
+	<link rel="icon" href="../error-404.html" type="image/x-icon" />
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' %}" />
+
+	<!-- PAGE TITLE HERE ============================================= -->
+	<title>CRYPTOBRIDGE</title>
+
+	<!-- MOBILE SPECIFIC ============================================= -->
+	<meta name="viewport" content="width=device-width, initial-scale= 1">
+
+	<!--[if lt IE 9]>
+	<script src="{% static 'admin/assets/js/html5shiv.min.js' %}"></script>
+	<script src="{% static 'admin/assets/js/respond.min.js' %}"></script>
+	<![endif]-->
+
+	<!-- All PLUGINS CSS ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/assets.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/vendors/calendar/fullcalendar.css' %}">
+
+	<!-- TYPOGRAPHY ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/typography.css' %}">
+
+	<!-- SHORTCODES ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/shortcodes/shortcodes.css' %}">
+
+	<!-- STYLESHEETS ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/dashboard.css' %}">
+	<link class="skin" rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/color/color-1.css' %}">
+
+</head>
+
+
+<body class="ttr-opened-sidebar ttr-pinned-sidebar">
+	<!-- header start -->
+	<header class="ttr-header">
+
+		<div class="ttr-header-wrapper">
+			<!--sidebar menu toggler start -->
+			<div class="ttr-toggle-sidebar ttr-material-button">
+				<i class="ti-close ttr-open-icon"></i>
+				<i class="ti-menu ttr-close-icon"></i>
+			</div>
+			<!--sidebar menu toggler end -->
+			<!--logo start -->
+			<div class="ttr-logo-box">
+				<div>
+					<a href="{% url 'index' %}" class="ttr-logo">
+						<img class="ttr-logo-mobile" alt="" src="{% static 'admin/assets/images/logo.jpg' %}" width="30" height="30">
+						<img class="ttr-logo-desktop" alt="" src="{% static 'admin/assets/images/logo-white.jpg' %}" width="160" height="27">
+					</a>
+				</div>
+			</div>
+			<!--logo end -->
+
+			<div>
+				<!-- header left menu start -->
+				<ul class="ttr-header-navigation">
+					<li>
+						<a href="{% url 'my-dashboard' %}" class="ttr-material-button ttr-submenu-toggle">DASHBOARD</a>
+					</li>
+				</ul>
+				<!-- header left menu end -->
+			</div>
+
+			<div class="ttr-header-right ttr-with-seperator">
+				<!-- header right menu start -->
+				<ul class="ttr-header-navigation">
+					<li>
+						<a href="#" class="ttr-material-button ttr-search-toggle"><i class="fa fa-search"> Search Course</i></a>
+					</li>
+				</ul>
+				<!-- header right menu end -->
+			</div>
+			<!--header search panel start -->
+			<div class="ttr-search-bar">
+				<form action="" method="POST" class="ttr-search-form">
+					{% csrf_token %}
+					<div class="ttr-search-input-wrapper">
+						<input type="text" name="qq" placeholder="search something..." class="ttr-search-input">
+						<button type="submit" name="search" class="ttr-search-submit"><i class="ti-arrow-right"></i></button>
+					</div>
+					<span class="ttr-search-close ttr-search-toggle">
+						<i class="ti-close"></i>
+					</span>
+				</form>
+			</div>
+			<!--header search panel end -->
+		</div>
+	</header>
+	<!-- header end -->
+	<!-- Left sidebar menu start -->
+	<!--Main container start -->
+
+    <div class="ttr-sidebar">
+		<div class="ttr-sidebar-wrapper content-scroll">
+			<!-- side menu logo start -->
+			<div class="ttr-sidebar-logo">
+				<a href="#"><img src="{% static 'admin/assets/images/logo.jpg' %}" width="122" height="27"></a>
+				<!-- <div class="ttr-sidebar-pin-button" title="Pin/Unpin Menu">
+					<i class="material-icons ttr-fixed-icon">gps_fixed</i>
+					<i class="material-icons ttr-not-fixed-icon">gps_not_fixed</i>
+				</div> -->
+				<div class="ttr-sidebar-toggle-button">
+					<i class="ti-arrow-left"></i>
+				</div>
+			</div>
+			<!-- side menu logo end -->
+			<!-- sidebar menu start -->
+			<nav class="ttr-sidebar-navi">
+				<ul>
+					<li>
+						<a href="{% url 'my-dashboard' %}" class="ttr-material-button">
+							<span class="ttr-icon"><i class="ti-home"></i></span>
+		                	<span class="ttr-label">Dashboard</span>
+
+		                </a>
+		            </li>
+                    <li>
+						<a href="{% url 'add-courses' %}" class="ttr-material-button">
+		                	<span class="ttr-label">ALL AVAILABLE COURSES </span>
+		                </a>
+		            </li>
+
+		            <li class="ttr-seperate"></li>
+				</ul>
+				<!-- sidebar menu end -->
+			</nav>
+			<!-- sidebar menu end -->
+		</div>
+	</div>
+
+	<main class="ttr-wrapper">
+        <h2>{{id}}</h2>
+		<div class="container-fluid">
+			<div class="db-breadcrumb">
+				<h4 class="breadcrumb-title">NOTE: Search accurately with respect to spaces</h4>
+			</div>
+		</div>
+
+
+
+		{% if ck %}
+			{% if got.identification_code in save_CUH %}
+				<h4 class="center">This Course: "{{got.title}}" you are trying to search was already bought by you,
+					it is already in your Dashboard.</h4>
+			{% else %}
+					<ul>
+						<div class="card-courses-list admin-courses">
+							<div class="card-courses-media">
+								<img src="{% static 'assets/images/courses/pic.jpg' %}" alt=""/>
+							</div>
+
+
+
+							{% if got.video_file %}
+								<div class="card-courses-media">
+									<h5 class="m-b10" align="center">A Video file</h5>
+									<video width= "100%" height="240">
+										<source src="{{got.video_file.url}}" type=" video/mp4"  controls autoplay loop>
+										Your browser does not support the Video tag
+									</video>
+								</div>
+							{% endif %}
+
+
+
+							<div class="card-courses-full-dec">
+								<div class="card-courses-title">
+									<h4>{{got.title}}<span><h5 class="text-primary">NG {{got.price}}</h5></span></h4>
+								</div>
+
+								<div class="row card-courses-dec">
+									<div class="col-md-12">
+										<h6 class="m-b10">Course Description</h6>
+										<p>{{got.description}}</p>
+									</div>
+								</div>
+                                <a href= "{% url 'initiate-payment' got.identification_code %}" class="btn "><p5>Add Course</p5></a>
+							</div>
+						</div>
+					</ul>
+			{% endif %}
+		{% else %}
+		<h4 class="center">No Result Found</h4>
+		{% endif %}
+
+    </main>
+	<div class="ttr-overlay"></div>
+
+<!-- External JavaScripts -->
+<script src="{% static 'admin/assets/js/jquery.min.js'%}"></script>
+<script src="{% static 'admin/assets/vendors/bootstrap/js/popper.min.js'%}"></script>
+<script src="{% static 'admin/assets/vendors/bootstrap/js/bootstrap.min.js'%}"></script>
+<script src="{% static 'admin/assets/vendors/bootstrap-select/bootstrap-select.min.js'%}"></script>
+<script src="{% static 'admin/assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js'%}"></script>
+<script src="{% static 'admin/assets/vendors/magnific-popup/magnific-popup.js'%}"></script>
+<script src="{% static 'admin/assets/vendors/counter/waypoints-min.js'%}"></script>
+<script src="{% static 'admin/assets/vendors/counter/counterup.min.js'%}"></script>
+<script src="{% static 'assets/vendors/imagesloaded/imagesloaded.js'%}"></script>
+<script src="{% static 'assets/vendors/masonry/masonry.js'%}"></script>
+<script src="{% static 'admin/assets/vendors/masonry/filter.js'%}"></script>
+<script src="{% static 'admin/assets/vendors/owl-carousel/owl.carousel.js'%}"></script>
+<script src="{% static 'admin/assets/vendors/scroll/scrollbar.min.js'%}"></script>
+<script src="{% static 'admin/assets/js/functions.js'%}"></script>
+<script src="{% static 'admin/assets/vendors/chart/chart.min.js'%}"></script>
+<script src="{% static 'admin/assets/js/admin.js'%}"></script>
+<script src="{% static 'admin/assets/vendors/calendar/moment.min.js'%}"></script>
+<script src="{% static 'admin/assets/vendors/calendar/fullcalendar.js'%}"></script>
+
+
+<script>
+  $(document).ready(function() {
+
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay,listWeek'
+      },
+      defaultDate: '2019-03-12',
+      navLinks: true, // can click day/week names to navigate views
+
+      weekNumbers: true,
+      weekNumbersWithinDays: true,
+      weekNumberCalculation: 'ISO',
+
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: 'All Day Event',
+          start: '2019-03-01'
+        },
+        {
+          title: 'Long Event',
+          start: '2019-03-07',
+          end: '2019-03-10'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2019-03-09T16:00:00'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2019-03-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2019-03-11',
+          end: '2019-03-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2019-03-12T10:30:00',
+          end: '2019-03-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2019-03-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2019-03-12T14:30:00'
+        },
+        {
+          title: 'Happy Hour',
+          start: '2019-03-12T17:30:00'
+        },
+        {
+          title: 'Dinner',
+          start: '2019-03-12T20:00:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2019-03-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2019-03-28'
+        }
+      ]
+    });
+
+  });
+
+</script>
+</body>
+</html>

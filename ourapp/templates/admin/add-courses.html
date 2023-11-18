@@ -1,0 +1,253 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+	<!-- META ============================================= -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+	<meta name="robots" content="" />
+	
+	<!-- DESCRIPTION -->
+	<meta name="description" content="Cryptobridge" />
+	
+	<!-- OG -->
+	<meta property="og:title" content="Cryptobridge" />
+	<meta property="og:description" content="Cryptobridge" />
+	<meta property="og:image" content="" />
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- FAVICONS ICON ============================================= -->
+	<link rel="icon" href="{% static 'admin/assets/images/favicon.ico' %}" type="image/x-icon" />
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'admin/assets/images/favicon.png' %}" />
+	
+	<!-- PAGE TITLE HERE ============================================= -->
+	<title>CRYPTOBRIDGE </title>
+	
+	<!-- MOBILE SPECIFIC ============================================= -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!--[if lt IE 9]>
+	<script src="{% static 'admin/assets/js/html5shiv.min.js' %}"></script>
+	<script src="{% static 'admin/assets/js/respond.min.js' %}"></script>
+	<![endif]-->
+	
+	<!-- All PLUGINS CSS ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/assets.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/vendors/calendar/fullcalendar.css' %}">
+	
+	<!-- TYPOGRAPHY ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/typography.css' %}">
+	
+	<!-- SHORTCODES ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/shortcodes/shortcodes.css' %}">
+	
+	<!-- STYLESHEETS ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/dashboard.css' %}">
+	<link class="skin" rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/color/color-1.css' %}">
+	
+</head>
+<body class="ttr-opened-sidebar ttr-pinned-sidebar">
+	
+	<!-- header start -->
+	<header class="ttr-header">
+
+		<div class="ttr-header-wrapper">
+			<!--sidebar menu toggler start -->
+			<div class="ttr-toggle-sidebar ttr-material-button">
+				<i class="ti-close ttr-open-icon"></i>
+				<i class="ti-menu ttr-close-icon"></i>
+			</div>
+			<!--sidebar menu toggler end -->
+			<!--logo start -->
+			<div class="ttr-logo-box">
+				<div>
+					<a href="{% url 'index' %}" class="ttr-logo">
+						<img class="ttr-logo-mobile" alt="" src="{% static 'admin/assets/images/logo.jpg' %}" width="30" height="30">
+						<img class="ttr-logo-desktop" alt="" src="{% static 'admin/assets/images/logo-white.jpg' %}" width="160" height="27">
+					</a>
+				</div>
+			</div>
+			<!--logo end -->
+
+			<div>
+				<!-- header left menu start -->
+				<ul class="ttr-header-navigation">
+					<li>
+						<a href="{% url 'my-dashboard' %}" class="ttr-material-button ttr-submenu-toggle">DASHBOARD</a>
+					</li>
+				</ul>
+				<!-- header left menu end -->
+			</div>
+
+			<div class="ttr-header-right ttr-with-seperator">
+				<!-- header right menu start -->
+				<ul class="ttr-header-navigation">
+					<li>
+						<a href="#" class="ttr-material-button ttr-search-toggle"><i class="fa fa-search"> Search Course</i></a>
+					</li>
+				</ul>
+				<!-- header right menu end -->
+			</div>
+			<!--header search panel start -->
+			<div class="ttr-search-bar">
+				<form action="" method="POST" class="ttr-search-form">
+					{% csrf_token %}
+					<div class="ttr-search-input-wrapper">
+						<input type="text" name="qq" placeholder="search something..." class="ttr-search-input">
+						<button type="submit" name="search" class="ttr-search-submit"><i class="ti-arrow-right"></i></button>
+					</div>
+					<span class="ttr-search-close ttr-search-toggle">
+						<i class="ti-close"></i>
+					</span>
+				</form>
+			</div>
+			<!--header search panel end -->
+		</div>
+	</header>
+	<!-- header end -->
+	<!-- Left sidebar menu start -->
+	<div class="ttr-sidebar">
+		<div class="ttr-sidebar-wrapper content-scroll">
+			<!-- side menu logo start -->
+			<div class="ttr-sidebar-logo">
+				<a href="#"><img src="{% static 'admin/assets/images/logo.jpg' %}" width="122" height="27"></a>
+				<!-- <div class="ttr-sidebar-pin-button" title="Pin/Unpin Menu">
+					<i class="material-icons ttr-fixed-icon">gps_fixed</i>
+					<i class="material-icons ttr-not-fixed-icon">gps_not_fixed</i>
+				</div> -->
+				<div class="ttr-sidebar-toggle-button">
+					<i class="ti-arrow-left"></i>
+				</div>
+			</div>
+			<!-- side menu logo end -->
+			<!-- sidebar menu start -->
+			<nav class="ttr-sidebar-navi">
+				<ul>
+					<li>
+						<a href="{% url 'my-dashboard' %}" class="ttr-material-button">
+							<span class="ttr-icon"><i class="ti-home"></i></span>
+		                	<span class="ttr-label">Dashboard</span>
+		                </a>
+		            </li>
+					
+		            <li class="ttr-seperate"></li>
+				</ul>
+				<!-- sidebar menu end -->
+			</nav>
+			<!-- sidebar menu end -->
+		</div>
+	</div>
+	<!-- Left sidebar menu end -->
+
+	<!--Main container start -->
+	<main class="ttr-wrapper">
+		<h2>{{id}}</h2>
+		<div class="container-fluid">
+			<div class="db-breadcrumb">
+				<h4 class="breadcrumb-title">Total No of Courses available: {{no}} Course(s)</h4>
+				<p class="breadcrumb-title">You can see your added courses in your Dashboard</p>
+					<ul class="db-breadcrumb-list">
+						<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+						<li>YOUR COURSES</li>
+					</ul>
+			</div>
+		</div>
+		<div class="widget-inner">
+					<p>
+						{% for i in courses %}
+							{% if i.identification_code in ctrace and userv in utrace %}
+
+							{% else %}
+								<ul>
+									<div class="card-courses-list admin-courses">
+										<div class="card-courses-media">
+											<img src="{% static 'assets/images/courses/pic.jpg' %}" alt=""/>
+										</div>
+
+
+										{% if i.video_file %}
+											<div class="card-courses-media">
+												<h5 class="m-b10" align="center">A Video file</h5>
+												<video width= "100%" height="240" controls>
+													<source src="{{i2.video_file.url}}" type=" video/mp4"  controls autoplay loop>
+													Your browser does not support the Video tag
+												</video>
+											</div>
+										{% endif %}
+
+
+
+										<div class="card-courses-full-dec">
+											<div class="card-courses-title">
+												<h4>{{i.title}}<span><h5 class="text-primary">Price: NG {{i.price}}</h5></span></h4>
+											</div>
+
+											<div class="row card-courses-dec">
+												<div class="col-md-12">
+													<h6 class="m-b10">Course Description</h6>
+													<p>{{i.description}}</p>
+												</div>
+											</div>
+
+
+											<a href= "{% url 'initiate-payment' i.identification_code %}" class="btn "><p5>Add Course</p5></a>
+	<!--											<iframe src="{{i.pdf_file}}.pdf#toolbar=0" width="100%" height="500px">-->
+	<!--											</iframe>-->
+										</div>
+									</div>
+								</ul>
+							{% endif %}
+						{% endfor %}
+
+					</p>
+
+				<!-- Your Profile Views Chart END-->
+		</div>
+	</main>
+	<div class="ttr-overlay"></div>
+
+<!-- External JavaScripts -->
+<script src="{% static 'admin/assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'admin/assets/vendors/bootstrap/js/popper.min.js' %}"></script>
+<script src="{% static 'admin/assets/vendors/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'admin/assets/vendors/bootstrap-select/bootstrap-select.min.js' %}"></script>
+<script src="{% static 'admin/assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js' %}"></script>
+<script src="{% static 'admin/assets/vendors/magnific-popup/magnific-popup.js' %}"></script>
+<script src="{% static 'admin/assets/vendors/counter/waypoints-min.js' %}"></script>
+<script src="{% static 'admin/assets/vendors/counter/counterup.min.js' %}"></script>
+<script src="{% static 'admin/assets/vendors/imagesloaded/imagesloaded.js' %}"></script>
+<script src="{% static 'admin/assets/vendors/masonry/masonry.js' %}"></script>
+<script src="{% static 'admin/assets/vendors/masonry/filter.js' %}"></script>
+<script src="{% static 'admin/assets/vendors/owl-carousel/owl.carousel.js' %}"></script>
+<script src="{% static 'admin/assets/vendors/scroll/scrollbar.min.js' %}"></script>
+<script src="{% static 'admin/assets/js/functions.js' %}"></script>
+<script src="{% static 'admin/assets/vendors/chart/chart.min.js' %}"></script>
+<script src="{% static 'admin/assets/js/admin.js' %}"></script>
+
+<script>
+// Pricing add
+	function newMenuItem() {
+		var newElem = $('tr.list-item').first().clone();
+		newElem.find('input').val('');
+		newElem.appendTo('table#item-add');
+	}
+	if ($("table#item-add").is('*')) {
+		$('.add-item').on('click', function (e) {
+			e.preventDefault();
+			newMenuItem();
+		});
+		$(document).on("click", "#item-add .delete", function (e) {
+			e.preventDefault();
+			$(this).parent().parent().parent().parent().remove();
+		});
+	}
+</script>
+</body>
+
+</html>

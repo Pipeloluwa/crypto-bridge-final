@@ -1,0 +1,268 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<!-- META ============================================= -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+	<meta name="robots" content="" />
+	
+	<!-- DESCRIPTION -->
+	<meta name="description" content="CRYPTOBRIDGE" />
+	
+	<!-- OG -->
+	<meta property="og:title" content="CRYPTOBRIDGE" />
+	<meta property="og:description" content="CRYPTOBRIDGE" />
+	<meta property="og:image" content="" />
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- FAVICONS ICON ============================================= -->
+	<link rel="icon" href="{% static 'assets/images/favicon.ico' %}" type="image/x-icon" />
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' %}" />
+	<!-- PAGE TITLE HERE ============================================= -->
+	<title>CRYPTOBRIDGE </title>
+
+	<!-- MOBILE SPECIFIC ============================================= -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--[if lt IE 9]>
+	<script src="{% static 'assets/js/html5shiv.min.js' %}"></script>
+	<script src="{% static 'assets/js/respond.min.js' %}"></script>
+	<![endif]-->
+	
+	<!-- All PLUGINS CSS ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/assets.css' %}">
+
+	<!-- TYPOGRAPHY ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/typography.css' %}">
+
+	<!-- SHORTCODES ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/shortcodes/shortcodes.css' %}">
+
+	<!-- STYLESHEETS ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+	<link class="skin" rel="stylesheet" type="text/css" href="{% static 'assets/css/color/color-1.css' %}">
+	
+</head>
+<body id="bg">
+<div class="page-wraper">
+<div id="loading-icon-bx"></div>
+
+    <!-- Header Top ==== -->
+    <header class="header rs-nav">
+		<div class="sticky-header navbar-expand-lg">
+            <div class="menu-bar clearfix">
+                <div class="container clearfix">
+					<!-- Header Logo ==== -->
+					<div class="menu-logo">
+						<a href="{% url 'index' %}"><img src="{% static 'assets/images/logo.jpg' %}" alt=""></a>
+					</div>
+					<!-- Mobile Nav Button ==== -->
+
+					<!-- Author Nav ==== -->
+
+					<!-- Search Box ==== -->
+					<!-- Navigation Menu ==== -->
+                    <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
+						<div class="menu-logo">
+							<a href="{% url 'index' %}"><img src="{% static 'assets/images/logo.jpg' %}" alt=""></a>
+						</div>
+                        <ul class="nav navbar-nav">	
+							<li class="active"><a href="{% url 'index' %}">Home </a></li>
+						</ul>
+
+						</div>
+					<!-- Navigation Menu END ==== -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header END ==== -->
+    <!-- Content -->
+    <div class="page-content bg-white">
+        <!-- inner page banner -->
+        <div class="page-banner" style="background-image:url({% static 'assets/images/banner/banner3.jpg' %});">
+            <div class="container">
+                <div class="page-banner-entry">
+                    <h1 class="text-white">Contact Us </h1>
+				 </div>
+            </div>
+        </div>
+		<!-- Breadcrumb row -->
+		<div class="breadcrumb-row">
+			<div class="container">
+				<ul class="list-inline">
+					<li><a href="{% url 'index' %}">Home</a></li>
+					<li>Contact Us </li>
+				</ul>
+			</div>
+		</div>
+		<!-- Breadcrumb row END -->
+	
+        <!-- inner page banner -->
+		{% if sent %}
+		<h4 class="center">  Your Message was sent successfully</h4>
+		{% endif %}
+        <div class="page-banner contact-page section-sp2">
+            <div class="container">
+                <div class="row">
+					<div class="col-lg-5 col-md-5 m-b30">
+						<div class="bg-primary text-white contact-info-bx ctob">
+							<h2 class="m-b10 title-head">Contact <span>Information</span></h2>
+							<p>Learn about digital currency today</p>
+							<div class="widget widget_getintuch">
+								<ul>
+<!--									<li><i class="ti-location-pin"></i>75k Newcastle St. Ponte Vedra Beach, FL 309382 New York</li>-->
+									<li><i class="ti-mobile"></i>08080026285 (24/7 Support Line)</li>
+									<li><i class="ti-email"></i>cryptobridge101@gmail.com</li>
+								</ul>
+							</div>
+<!--							<h5 class="m-t0 m-b20">Follow Us</h5>-->
+<!--							<ul class="list-inline contact-social-bx">-->
+<!--								<li><a href="#" class="btn outline radius-xl"><i class="fa fa-facebook"></i></a></li>-->
+<!--								<li><a href="#" class="btn outline radius-xl"><i class="fa fa-twitter"></i></a></li>-->
+<!--								<li><a href="#" class="btn outline radius-xl"><i class="fa fa-linkedin"></i></a></li>-->
+<!--								<li><a href="#" class="btn outline radius-xl"><i class="fa fa-google-plus"></i></a></li>-->
+<!--							</ul>-->
+						</div>
+					</div>
+					<div class="col-lg-7 col-md-7">
+						<form class="contact-bx" action="{% url 'contact' %}" method="POST">
+								{% csrf_token %}
+								<div class="ajax-message"></div>
+								<div class="heading-bx left">
+									<h2 class="title-head">Get In <span>Touch</span></h2>
+									<p2>It is a long established fact that a reader will be distracted by the readable content of a page</p2>
+								</div>
+								<div class="row placeani">
+									<div class="col-lg-6">
+										<div class="form-group">
+											<div class="input-group">
+												<label>Your Name</label>
+												<input name="name" type="text" required class="form-control valid-character">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<div class="input-group">
+												<label>Your Email Address</label>
+												<input name="email" type="email" class="form-control" required >
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<div class="input-group">
+												<label>Your Phone</label>
+												<input name="phone" type="text" required class="form-control int-value">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<div class="input-group">
+												<label>Subject</label>
+												<input name="subject" type="text" required class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="form-group">
+											<div class="input-group">
+												<label>Type Message</label>
+												<textarea name="message" rows="4" class="form-control" required ></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+							<button name= "submit" type="submit" value="Submit" class="btn button-md">Send</button>
+						</form>
+						Or Message us through <a href="mailto:cryptobridge101@gmail.com">our Email Address</a>
+						<h6 class="notec">To send an email message, you must have firstly signed into your email account on your device</h6>
+
+					</div>
+				</div>
+            </div>
+		</div>
+        <!-- inner page banner END -->
+    </div>
+    <!-- Content END-->
+    <!-- Footer ==== -->
+    <footer>
+        <div class="footer-top">
+			<div class="pt-exebar">
+				<div class="container">
+					<div class="d-flex align-items-stretch">
+						<div class="pt-logo mr-auto">
+							<a href="{% url 'index' %}"><img src="{% static 'assets/images/logo.jpg' %}" width="150" alt=""/></a>
+						</div>
+						<div class="pt-social-link">
+							<ul class="list-inline m-a0">
+								<li><a href="https://twitter.com/cryptobridgeac" class="btn-link"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="https://instagram.com/cbridgeacademy" class="btn-link"><i class="fa fa-instagram"></i></a></li>
+								<li><a href="mailto:cryptobridge101@gmail.com" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
+							</ul>
+						</div>
+						<div class="pt-btn-join">
+							<a href="{% url 'register' %}" class="btn ">Join Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="container">
+                <div class="row">
+					<div class="col-12 col-lg-5 col-md-7 col-sm-12">
+						<div class="row">
+							<div class="col-4 col-lg-4 col-md-4 col-sm-4">
+								<div class="widget footer_widget">
+									<h5 class="footer-title">Company</h5>
+									<ul>
+										<li><a href="{% url 'index' %}">Home</a></li>
+										<li><a href="{% url 'about' %}">About</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-4 col-lg-4 col-md-4 col-sm-4">
+								<div class="widget footer_widget">
+									<h5 class="footer-title">Courses</h5>
+									<ul>
+										<li><a href="{% url 'courses' %}">Courses</a></li>
+										<li><a href="{% url 'contact' %}">Contact</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer END ==== -->
+    <!-- scroll top button -->
+    <button class="back-to-top fa fa-chevron-up" ></button>
+</div>
+<!-- External JavaScripts -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap/js/popper.min.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js' %}"></script>
+<script src="{% static 'assets/vendors/magnific-popup/magnific-popup.js' %}"></script>
+<script src="{% static 'assets/vendors/counter/waypoints-min.js' %}"></script>
+<script src="{% static 'assets/vendors/counter/counterup.min.js' %}"></script>
+<script src="{% static 'assets/vendors/imagesloaded/imagesloaded.js' %}"></script>
+<script src="{% static 'assets/vendors/masonry/masonry.js' %}"></script>
+<script src="{% static 'assets/vendors/masonry/filter.js' %}"></script>
+<script src="{% static 'assets/vendors/owl-carousel/owl.carousel.js' %}"></script>
+<script src="{% static 'assets/js/functions.js' %}"></script>
+<script src="{% static 'assets/js/contact.js' %}"></script>
+<script src='../../www.google.com/recaptcha/api.js'></script>
+</body>
+
+
+</html>
